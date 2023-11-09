@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  
+  <p style="margin-top: 40px; margin-left: 30px; font-size: 20px;" 
+  >To calculate your BMI please enter your height (m) and weight(kg) below:</p>
+  <form action="{{ url_for('BMI_con') }}" method="post">
+    <p style="margin-top: 30px; margin-left: 30px; font-weight: bold;" >Height(m):</p>
+    <p><input id="inputHeight" type="text" name="Height" style="margin-left: 30px;"/></p>
+    <p style="margin-left: 30px; font-weight: bold;">Weight(kg):</p>
+    <p><input id="inputWeight " type="text" name="Weight" style="margin-left: 30px;" /></p>
+    <p> <input type="submit" value="Calculate" style="margin-top: 20px; margin-left: 30px;" /></p>
+  </form>
+ 
+  {% if BMI_converter is defined %}
+  <p style="margin-left: 30px; font-size: 24px; font-weight: bold;">Your BMI is : {{ BMI_converter }}</p>
+{% endif %}
+{% endblock %}

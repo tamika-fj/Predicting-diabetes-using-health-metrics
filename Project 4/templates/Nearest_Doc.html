@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p style="margin-top: 60px; margin-left: 30px; font-size: 18px;">If you would like to get proffessional medical advice</p>
+<p style="margin-left: 30px; font-size: 18px;">please enter your postcode below followed by -vic to find your nearest doctor:</p>
+<form action="{{ url_for('Nearest_Doc') }}" method="post" style="margin-top: 30px; margin-left: 30px">
+  <p style="font-weight: bold;">Postcode:</p>
+  <p><input type="text" name="Postcode" /></p>
+  <p><input type="submit" value="Submit" /></p>
+</form>
+<div id="resultContainer" style="margin-top: 20px; margin-left: 30px; font-size: 18px;">
+  {% if response %}
+    <p>Here are three medical clinics in your area:</p>
+    <ul>
+      {% for address in response %}
+        <li>{{ address }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>{{ response }}</p>
+  {% endif %}
+</div>
+
+{% endblock %}

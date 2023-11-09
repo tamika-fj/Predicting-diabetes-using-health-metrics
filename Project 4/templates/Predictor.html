@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}  
+<p style="margin-top: 40px; margin-left: 30px; font-size: 20px;" 
+>Please enter your health metrics below to predict your diabetes status:</p>
+  <form action="{{ url_for('Predictor') }}" method="post">
+    <p style="margin-top: 30px; margin-left: 30px; font-weight: bold;">Blood Pressure:</p>
+    <p><input type="text" name="Blood Pressure" style="margin-left: 30px;"  /></p>
+    <p style="margin-left: 30px; font-weight: bold;">Plasma Glucose:</p>
+    <p><input type="text" name="Glucose" style="margin-left: 30px;" /></p>
+    <p style="margin-left: 30px; font-weight: bold;">Body Mass Index:</p>
+    <p><input type="text" name="BMI" style="margin-left: 30px;" /></p>
+    <p style="margin-left: 30px; font-weight: bold;">Age:</p>
+    <p><input type="text" name="Age" style="margin-left: 30px;" /></p>
+    <p><input type="submit" value="Submit" style="margin-left: 30px;" /></p>
+  </form>
+  {% if response is defined %}
+    <p style="margin-left: 30px; font-size: 20px; font-weight: bold;">{{ response }}</p>
+  {% endif %}
+{% endblock %}
+

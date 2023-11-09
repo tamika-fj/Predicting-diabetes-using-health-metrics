@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+<p style="margin-top: 40px; margin-left: 15px; font-size: 24px;">Explore the graphs and content to discover more about the realtionship
+between health metrics and diabetes.</p>
+<br>
+<p style="font-size: 20px; font-weight: bold; margin-left: 15px;">Diabetes</p>
+<p style="margin-left: 15px; margin-right: 15px;">Diabetes is a chronic and incurable disease that can lead to
+many serious health conditions if not properly managed.
+People with diabetes either do not create the insulin hormone or have become resistant to its effects.<br>
+The role of the insulin hormone is to signal for cells to intake glucose, which is released into the bloodstream 
+after food consumption, so it can be stored to be used as energy later.<br> People with diabetes therefore have excess 
+glucose in the blood which overtime causes serious damage to the body. Initially the symptoms of diabetes are silent,
+and it often goes undiagnosed, which <br> is why it’s so important to have regular checkups and monitor your health.</p> 
+<br>
+<p style="font-size: 20px; font-weight: bold; margin-left: 15px;">Metrics used to create the diabetes predictor model.</p> 
+<br>
+
+<p style="font-weight: bold; margin-left: 15px;">Plasma glucose concentration 2 hours post oral glucose tolerance test.</p>
+<p style="margin-left: 15px; margin-right: 15px;">This is a measure of the bodies ability to remove glucose from the bloodstream after a large glucose intake, 
+a high reading indicates sub optimal glucose intake which could be prediabetes or diabetes.</p>
+<br>
+
+<p style="font-weight: bold; margin-left: 15px;">Diastolic blood pressure </p>
+<p style="margin-left: 15px; margin-right: 15px;">Diastolic blood pressure is a measure of the pressure in the arteries between heart beats. 
+High blood pressure leads to weakening of the vessel walls which can lead to stroke and heart disease. 
+<br>Additionally, it has been linked to increased complications in diabetic patients. 
+The graph below illustrates that over half of the diabetic patients in the study used to create the model had 
+elevated or higher blood pressure. </p>
+<br>
+<img src="/static/BP_bar.png" alt="BMI graph" style="width: 800px; height: 500px;">
+<br>
+<p style="font-weight: bold; margin-left: 15px;">Triceps skin fold thickness. </p>
+<p style="margin-left: 15px; margin-right: 15px;">This is a surrogate measure for body fat percentage. Callipers are used to pinch the fat and skin behind the 
+arm which is then used to calculate body fat percentage. High body weight and body fat have a strong relationship<br> 
+with diabetes and type II diabetes in-particular. </p>
+<br>
+
+<p style="font-weight: bold; margin-left: 15px;">Insulin levels 2 hours post oral glucose test.</p>
+<p style="margin-left: 15px; margin-right: 15px;">This is a measure of the insulin hormone levels 2 hours post glucose tolerance test. 
+This measure is a lot less commonly taken than glucose and there is still debate over what the optimal insulin 
+levels should be at both fasting state <br> and following a glucose tolerance test. It would be expected that patients 
+with type II diabetes would have higher than normal insulin levels as they have insulin resistance and would 
+therefor require larger quantities of the hormone <br> to have the desired effect. </p>
+<br>
+
+<p style="font-weight: bold; margin-left: 15px;">Body Mass Index. </p>
+<p style="margin-left: 15px; margin-right: 15px;"> Body Mass Index or BMI is a calculated value derived from height and weight and is another surrogate measure for 
+body fat percentage. As previously stated, high body fat percentages and high BMI have a strong association <br> with 
+metabolic diseases and diabetes. The graph below supports this, showing less than 10 diabetes patients from the 
+study had a BMI of healthy or under. </p>
+<br>
+<img src="/static/BMI_bar.png" alt="BMI graph" style="width: 800px; height: 500px;">
+<br>
+<p style="font-weight: bold; margin-left: 15px;">Diabetes pedigree function </p>
+<p style="margin-left: 15px; margin-right: 15px;">This is a function that gives a diabetes prediction score based on patients’ family history of diabetes (type II) 
+and the patient’s age. The lower the score the less likelihood of diabetes, with a score of 1 or more indicating 
+diabetes.</p>
+<br>
+
+
+{% endblock %}

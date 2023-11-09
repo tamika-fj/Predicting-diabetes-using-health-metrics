@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p style="margin-top: 40px; margin-left: 700px; font-size: 24px;"> Please enter your health metrics below:</p>
+  <form action="{{ url_for('Metrics') }}" method="post">
+    <div class="input-container">
+      <img src="/static/blood_pressure_classification.png" alt="Blood Pressure">
+      <p style="font-weight: bold;">Blood Pressure:</p>
+      <p><input type="text" name="Blood Pressure" /></p>
+    </div>
+    
+    <div class="input-container">
+      <img src="/static/diabetes_classification.png" alt="Glucose">
+      <p style="font-weight: bold;">Plasma Glucose:</p>
+      <p><input type="text" name="Glucose" /></p>
+    </div>
+    
+    <div class="input-container">
+      <img src="/static/BMi_classification.png" alt="BMI">
+      <p style="font-weight: bold;">Body Mass Index:</p>
+      <p><input type="text" name="BMI" /></p>
+    </div>
+    
+    <div class="submit-container">
+    <p><input type="submit" value="Submit" /></p>
+  </div>
+  </form>
+  
+
+  {% if bp_category is defined %}
+    <p style="margin-left: 700px; font-size: 20px; font-weight: bold;">Classification of Blood Pressure: {{ bp_category }}</p>
+    <p style="margin-left: 700px; font-size: 20px; font-weight: bold;">Classification of Plasma Glucose: {{ glucose_category }}</p>
+    <p style="margin-left: 700px; font-size: 20px; font-weight: bold;">Classification of Body Mass Index: {{ bmi_category }}</p>
+  {% endif %}
+
+{% endblock %}
+
+
